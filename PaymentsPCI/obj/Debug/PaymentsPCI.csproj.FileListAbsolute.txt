@@ -1,7 +1,6 @@
 C:\Users\Administrator\Documents\GitHubVisualStudio\PCIPay\PaymentsPCI\bin\PaymentsPCI.dll.config
 C:\Users\Administrator\Documents\GitHubVisualStudio\PCIPay\PaymentsPCI\bin\PaymentsPCI.dll
 C:\Users\Administrator\Documents\GitHubVisualStudio\PCIPay\PaymentsPCI\bin\PaymentsPCI.pdb
-C:\Users\Administrator\Documents\GitHubVisualStudio\PCIPay\PaymentsPCI\bin\AjaxControlToolkit.dll
 C:\Users\Administrator\Documents\GitHubVisualStudio\PCIPay\PaymentsPCI\bin\EntityFramework.dll
 C:\Users\Administrator\Documents\GitHubVisualStudio\PCIPay\PaymentsPCI\bin\EntityFramework.SqlServer.dll
 C:\Users\Administrator\Documents\GitHubVisualStudio\PCIPay\PaymentsPCI\bin\Microsoft.WindowsAzure.Storage.dll
