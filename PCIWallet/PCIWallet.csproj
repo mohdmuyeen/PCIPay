@@ -45,10 +45,14 @@
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
-    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.Entity">
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
-    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.Entity">
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
@@ -70,6 +74,8 @@
     <Content Include="bin\EntityFramework.xml" />
     <Content Include="bin\PCIWallet.dll" />
     <Content Include="bin\PCIWallet.pdb" />
+    <Content Include="bin\System.Data.Entity.dll" />
+    <Content Include="bin\System.Web.Entity.dll" />
     <Content Include="CustomerWallet.svc" />
     <Content Include="DataModel.tt">
       <DependentUpon>DataModel.edmx</DependentUpon>
