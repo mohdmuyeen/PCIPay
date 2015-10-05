@@ -9,6 +9,7 @@ namespace PaymentsPCI
     {
         public List<PaymentHistory> PaymentHistory(String AccountId)
         {
+
             List<PaymentHistory> lstPAyments = null;
             try
             {
