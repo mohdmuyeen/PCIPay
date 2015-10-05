@@ -5,4 +5,3 @@ C:\Users\Administrator\Documents\GitHubVisualStudio\PCIPay\PCIWallet\bin\EntityF
 C:\Users\Administrator\Documents\GitHubVisualStudio\PCIPay\PCIWallet\bin\EntityFramework.xml
 C:\Users\Administrator\Documents\GitHubVisualStudio\PCIPay\PCIWallet\obj\Debug\PCIWallet.dll
 C:\Users\Administrator\Documents\GitHubVisualStudio\PCIPay\PCIWallet\obj\Debug\PCIWallet.pdb
-C:\Users\Administrator\Documents\GitHubVisualStudio\PCIPay\PCIWallet\obj\Debug\PCIWallet.csprojResolveAssemblyReference.cache
