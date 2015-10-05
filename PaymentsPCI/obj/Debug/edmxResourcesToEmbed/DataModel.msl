@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="dbPCITokenModelStoreContainer" CdmEntityContainer="PCITokenDataModel">
+    <EntitySetMapping Name="tPaymentTransactions">
+      <EntityTypeMapping TypeName="dbPCITokenModel.tPaymentTransaction">
+        <MappingFragment StoreEntitySet="tPaymentTransaction">
+          <ScalarProperty Name="IID" ColumnName="IID" />
+          <ScalarProperty Name="AccountID" ColumnName="AccountID" />
+          <ScalarProperty Name="TransactionNumber" ColumnName="TransactionNumber" />
+          <ScalarProperty Name="TokenID" ColumnName="TokenID" />
+          <ScalarProperty Name="PaymentDate" ColumnName="PaymentDate" />
+          <ScalarProperty Name="PaymentAmount" ColumnName="PaymentAmount" />
+          <ScalarProperty Name="TransactionType" ColumnName="TransactionType" />
+          <ScalarProperty Name="TransactionStatus" ColumnName="TransactionStatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tPCITokens">
+      <EntityTypeMapping TypeName="dbPCITokenModel.tPCIToken">
+        <MappingFragment StoreEntitySet="tPCIToken">
+          <ScalarProperty Name="IID" ColumnName="IID" />
+          <ScalarProperty Name="TokenID" ColumnName="TokenID" />
+          <ScalarProperty Name="CreditCardNumber" ColumnName="CreditCardNumber" />
+          <ScalarProperty Name="BankAccountNumber" ColumnName="BankAccountNumber" />
+          <ScalarProperty Name="RoutingNumber" ColumnName="RoutingNumber" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tStgPayments">
+      <EntityTypeMapping TypeName="dbPCITokenModel.tStgPayment">
+        <MappingFragment StoreEntitySet="tStgPayments">
+          <ScalarProperty Name="IID" ColumnName="IID" />
+          <ScalarProperty Name="AccountID" ColumnName="AccountID" />
+          <ScalarProperty Name="TransactionNumber" ColumnName="TransactionNumber" />
+          <ScalarProperty Name="TokenID" ColumnName="TokenID" />
+          <ScalarProperty Name="PaymentDate" ColumnName="PaymentDate" />
+          <ScalarProperty Name="PaymentAmount" ColumnName="PaymentAmount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="insertpayment" FunctionName="dbPCITokenModel.Store.insertpayment" />
+    <FunctionImportMapping FunctionImportName="PAYMENTHISTORY" FunctionName="dbPCITokenModel.Store.PAYMENTHISTORY">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbPCITokenModel.PAYMENTHISTORY_Result">
+          <ScalarProperty Name="Accountid" ColumnName="Accountid" />
+          <ScalarProperty Name="PaymentDate" ColumnName="PaymentDate" />
+          <ScalarProperty Name="PaymentAmount" ColumnName="PaymentAmount" />
+          <ScalarProperty Name="Void" ColumnName="Void" />
+          <ScalarProperty Name="Reversal" ColumnName="Reversal" />
+          <ScalarProperty Name="TransactionStatus" ColumnName="TransactionStatus" />
+          <ScalarProperty Name="TransactionNumber" ColumnName="TransactionNumber" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="PymtHistory" FunctionName="dbPCITokenModel.Store.PymtHistory">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbPCITokenModel.PymtHistory_Result">
+          <ScalarProperty Name="Accountid" ColumnName="Accountid" />
+          <ScalarProperty Name="PaymentDate" ColumnName="PaymentDate" />
+          <ScalarProperty Name="PaymentAmount" ColumnName="PaymentAmount" />
+          <ScalarProperty Name="Void" ColumnName="Void" />
+          <ScalarProperty Name="Reversal" ColumnName="Reversal" />
+          <ScalarProperty Name="TransactionStatus" ColumnName="TransactionStatus" />
+          <ScalarProperty Name="TransactionNumber" ColumnName="TransactionNumber" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="ReversePayment" FunctionName="dbPCITokenModel.Store.ReversePayment" />
+    <FunctionImportMapping FunctionImportName="StopPayment" FunctionName="dbPCITokenModel.Store.StopPayment" />
+    <FunctionImportMapping FunctionImportName="uspGetWallet" FunctionName="dbPCITokenModel.Store.uspGetWallet">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbPCITokenModel.uspGetWallet_Result">
+          <ScalarProperty Name="AccountNumber" ColumnName="AccountNumber" />
+          <ScalarProperty Name="BankLastFour" ColumnName="BankLastFour" />
+          <ScalarProperty Name="RoutingNumber" ColumnName="RoutingNumber" />
+          <ScalarProperty Name="TokenID" ColumnName="TokenID" />
+          <ScalarProperty Name="DisplayName" ColumnName="DisplayName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="VOIDPAYMENT" FunctionName="dbPCITokenModel.Store.VOIDPAYMENT" />
+    <FunctionImportMapping FunctionImportName="walletPayment" FunctionName="dbPCITokenModel.Store.walletPayment" />
+  </EntityContainerMapping>
+</Mapping>

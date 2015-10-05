@@ -1,0 +1,7 @@
+C:\Users\Administrator\Documents\GitHubVisualStudio\PCIPay\PCIWallet\bin\PCIWallet.dll.config
+C:\Users\Administrator\Documents\GitHubVisualStudio\PCIPay\PCIWallet\bin\PCIWallet.dll
+C:\Users\Administrator\Documents\GitHubVisualStudio\PCIPay\PCIWallet\bin\PCIWallet.pdb
+C:\Users\Administrator\Documents\GitHubVisualStudio\PCIPay\PCIWallet\bin\EntityFramework.dll
+C:\Users\Administrator\Documents\GitHubVisualStudio\PCIPay\PCIWallet\bin\EntityFramework.xml
+C:\Users\Administrator\Documents\GitHubVisualStudio\PCIPay\PCIWallet\obj\Debug\PCIWallet.dll
+C:\Users\Administrator\Documents\GitHubVisualStudio\PCIPay\PCIWallet\obj\Debug\PCIWallet.pdb

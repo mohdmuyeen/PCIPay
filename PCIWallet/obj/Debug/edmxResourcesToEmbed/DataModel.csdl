@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="dbPCITokenModel1" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="tPaymentTransaction">
+    <Key>
+      <PropertyRef Name="IID" />
+    </Key>
+    <Property Name="IID" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AccountID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TransactionNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TokenID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PaymentDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="PaymentAmount" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="TransactionType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TransactionStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tPCIToken">
+    <Key>
+      <PropertyRef Name="IID" />
+    </Key>
+    <Property Name="IID" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TokenID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CreditCardNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="BankAccountNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="RoutingNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tStgPayment">
+    <Key>
+      <PropertyRef Name="IID" />
+    </Key>
+    <Property Name="IID" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AccountID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TransactionNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TokenID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PaymentDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="PaymentAmount" Type="Decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityContainer Name="dbPCITokenDataModel" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="tPaymentTransactions" EntityType="Self.tPaymentTransaction" />
+    <EntitySet Name="tPCITokens" EntityType="Self.tPCIToken" />
+    <EntitySet Name="tStgPayments" EntityType="Self.tStgPayment" />
+    <FunctionImport Name="insertpayment">
+      <Parameter Name="PACCOUNTID" Mode="In" Type="String" />
+      <Parameter Name="PPAYMENTAMOUNT" Mode="In" Type="Decimal" />
+      <Parameter Name="PBANKACCOUNTNUMBER" Mode="In" Type="String" />
+      <Parameter Name="PROUTINGNUMBER" Mode="In" Type="String" />
+      <Parameter Name="PCREDITCARDNUMBER" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="PAYMENTHISTORY" ReturnType="Collection(dbPCITokenModel1.PAYMENTHISTORY_Result)">
+      <Parameter Name="PACCOUNTID" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="PymtHistory" ReturnType="Collection(dbPCITokenModel1.PymtHistory_Result)">
+      <Parameter Name="PACCOUNTID" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="ReversePayment">
+      <Parameter Name="PACCOUNTID" Mode="In" Type="String" />
+      <Parameter Name="PTRANSACTIONNUMBER" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="StopPayment">
+      <Parameter Name="PACCOUNTID" Mode="In" Type="String" />
+      <Parameter Name="PTRANSACTIONNUMBER" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="uspGetWallet" ReturnType="Collection(dbPCITokenModel1.uspGetWallet_Result)">
+      <Parameter Name="pAccountId" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="VOIDPAYMENT">
+      <Parameter Name="PACCOUNTID" Mode="In" Type="String" />
+      <Parameter Name="PTRANSACTIONNUMBER" Mode="In" Type="String" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="PAYMENTHISTORY_Result">
+    <Property Type="String" Name="Accountid" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="PaymentDate" Nullable="true" MaxLength="10" />
+    <Property Type="Decimal" Name="PaymentAmount" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="String" Name="Void" Nullable="false" MaxLength="1" />
+    <Property Type="String" Name="Reversal" Nullable="false" MaxLength="1" />
+    <Property Type="String" Name="TransactionStatus" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="TransactionNumber" Nullable="false" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="PymtHistory_Result">
+    <Property Type="String" Name="Accountid" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="PaymentDate" Nullable="true" MaxLength="10" />
+    <Property Type="Decimal" Name="PaymentAmount" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="String" Name="Void" Nullable="false" MaxLength="1" />
+    <Property Type="String" Name="Reversal" Nullable="false" MaxLength="1" />
+    <Property Type="String" Name="TransactionStatus" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="TransactionNumber" Nullable="false" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="uspGetWallet_Result">
+    <Property Type="String" Name="AccountNumber" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="BankLastFour" Nullable="true" MaxLength="4" />
+    <Property Type="String" Name="RoutingNumber" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="TokenID" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="DisplayName" Nullable="false" MaxLength="6" />
+  </ComplexType>
+</Schema>

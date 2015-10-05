@@ -40,7 +40,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AjaxControlToolkit">
-      <HintPath>..\..\..\sw\VS2012\AjaxControlToolkit.Binary.NET45.zip\AjaxControlToolkit.dll</HintPath>
+      <HintPath>..\..\..\..\Downloads\AjaxControlToolkit.Binary.NET45\AjaxControlToolkit.dll</HintPath>
     </Reference>
     <Reference Include="AjaxMin">
       <HintPath>C:\Users\Administrator\Downloads\AjaxControlToolkit.Binary.NET45\AjaxMin.dll</HintPath>
